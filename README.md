@@ -22,10 +22,10 @@ Official PyTorch implementation for the paper:
 
 > Usecase of our AIDN. (a) shows the conventional pipeline of distributing HR images over
 social media platforms. (b) shows the distribution pipeline with our proposed
-AIDN. <i>H</i> and <i>W</i> denote the height and width of images; s<sub>1</sub>, ..., s<sub>n</sub> are scale factors; and <i>N</i> stands for the upper-limit resolution of various social media platforms.
+AIDN. <i>H</i> and <i>W</i> denote the height and width of images; s<sub>1</sub>, ..., s<sub>n</sub> are scale factors; and <i>N</i> stands for the upper-limit resolution of various social media platforms. AIDN allows users to bypass the resolution upper-limit of social media platforms by preventing from auto-downscaling, thus receivers can obtain HR images with more details.
 
 ## **TODO**
-[] Release an interactive inspection demo.
+- [ ] Release an interactive inspection demo.
 
 ## **Changelog**
 - 2023.07.17 Release code and model weights!

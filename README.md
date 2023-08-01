@@ -106,11 +106,12 @@ The JPEG-robust version of AIDN (i.e., [AIDN+](https://drive.google.com/file/d/1
 ## **Citation**
 If you find the code useful for your work, please star this repo and consider citing:
 ```
-@article{xing2022scale,
+@article{xing2023scale,
   title={Scale-arbitrary invertible image downscaling},
-  author={Xing, Jinbo and Hu, Wenbo and Wong, Tien-Tsin},
-  journal={arXiv preprint arXiv:2201.12576},
-  year={2022}
+  author={Xing, Jinbo and Hu, Wenbo and Xia, Menghan and Wong, Tien-Tsin},
+  journal={IEEE Transactions on Image Processing},
+  year={2023},
+  publisher={IEEE}
 }
 ```
 

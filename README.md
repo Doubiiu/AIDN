@@ -8,7 +8,7 @@ Official PyTorch implementation for the paper:
 >
 > Jinbo Xing*, Wenbo Hu*, Menghan Xia, Tien-Tsin Wong    (*joint first authors)
 >
-> <a href='https://arxiv.org/abs/2201.12576'><img src='https://img.shields.io/badge/arXiv-2201.12576-red'></a> <a href='https://doubiiu.github.io/projects/aidn/'><img src='https://img.shields.io/badge/Project-Video-Green'></a> <a href='https://doubiiu.github.io/projects/aidn/compare.html'><img src='https://img.shields.io/badge/Online-Demo-Blue'></a>
+> <a href='https://ieeexplore.ieee.org/document/10192538?denied='><img src='https://img.shields.io/badge/Paper-IEEExplore-red'></a> <a href='https://doubiiu.github.io/projects/aidn/'><img src='https://img.shields.io/badge/Project-Video-Green'></a> <a href='https://doubiiu.github.io/projects/aidn/compare.html'><img src='https://img.shields.io/badge/Online-Demo-Blue'></a>
 
 <p align="center">
 <img src="assets/teaser_README.png" width="98%"/>

@@ -74,7 +74,8 @@ Distributed:
 TEST:
   exp_name: AIDN
   test_root: Data/
-  test_dataset: Set5+Set14+BSDS100+urban100
+  # test_dataset: Set5+Set14+BSDS100+urban100
+  test_dataset: Set5
   test_scale: 1.5+2.5+3.5
   save: False
   split: val

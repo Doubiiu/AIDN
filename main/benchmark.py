@@ -53,7 +53,7 @@ def main():
         raise RuntimeError("=> no checkpoint flound at '{}'".format(cfg.model_path))
 
     # ####################### Data Loader ####################### #
-    data_names = cfg.test_dataset.split('+')
+    data_names = cfg.test_dataset.split('+') if '+' in cfg.test_dataset else [cfg.test_dataset]
     for data_name in data_names:
         cfg.data_name = data_name
         cfg.data_root = cfg.test_root
@@ -67,7 +67,8 @@ def main():
         test_loader = torch.utils.data.DataLoader(test_data, batch_size=cfg.test_batch_size,
                                                 shuffle=False, num_workers=cfg.workers, pin_memory=True,
                                                 drop_last=False)
-        for scale in cfg.test_scale.split('+'):
+        test_scales = cfg.test_scale.split('+') if '+' in str(cfg.test_scale) else [cfg.test_scale]
+        for scale in test_scales:
             logger.info("\n=> Dataset '{}' (x{})\n".format(data_name, scale))
             test(model, test_loader, scale=float(scale), save=cfg.save, data_name=cfg.data_name)
 

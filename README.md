@@ -28,6 +28,7 @@ AIDN. <i>H</i> and <i>W</i> denote the height and width of images; s<sub>1</sub>
 - [ ] Release an interactive inspection demo. -->
 
 ## **Changelog**
+- 2023.09.07 Fix a bug which potentially caused inconsistent quantitative results between the released code and the paper
 - 2023.07.30 Release an interactive inspection demo.
 - 2023.07.17 Release code and model weights!
 
@@ -98,10 +99,53 @@ After training, the log and model weights will be saved in `LOG/DIV2K/<exp_name>
 sh scripts/benchmark.sh <exp_name> <config_path>
 e.g.: sh scripts/benchmark.sh AIDN_exp01 config/DIV2K/AIDN.yaml
 ```
-To benchmark the pre-trained model weights, please download the weights of [AIDN](https://drive.google.com/file/d/1tYlOTQvnsszfLs6cn8p4GQ3Nkzgb4r92/view?usp=drive_link)  and place it in the `LOG/DIV2K/pre-train/` folder, and then run the benchmarking script:
+
+## **Benchmark the pre-trained model weights**
+Please download the pre-trained weights of [AIDN](https://drive.google.com/file/d/1tYlOTQvnsszfLs6cn8p4GQ3Nkzgb4r92/view?usp=drive_link)  and place it in the `LOG/DIV2K/pre-train/` folder, and then run the benchmarking script:
 ```
 sh scripts/AIDN_benchmark.sh config/DIV2K/AIDN_benchmark.yaml
 ```
+Note that here we only provide a small-scale `Set5` dataset for reproduction purpose (actually we don't host the right of redistributing these datasets), you can modify `config/DIV2K/AIDN_benchmark.yaml` to benchmark on more downloaded datasets.
+
+The stdout of running this script should be:
+```
+=> Dataset 'Set5' (x1.5)
+==>res_lr:
+PSNR: 42.42
+SSIM: 0.9870
+PSNR-Y: 48.56
+SSIM-Y: 0.9962
+==>res_sr:
+PSNR: 45.26
+SSIM: 0.9854
+PSNR-Y: 50.61
+SSIM-Y: 0.9961
+
+Dataset 'Set5' (x2.5)
+==>res_lr:
+PSNR: 39.42
+SSIM: 0.9851
+PSNR-Y: 46.04
+SSIM-Y: 0.9960
+==>res_sr:
+PSNR: 37.43
+SSIM: 0.9550
+PSNR-Y: 40.77
+SSIM-Y: 0.9750
+
+Dataset 'Set5' (x3.5)
+==>res_lr:
+PSNR: 37.89
+SSIM: 0.9853
+PSNR-Y: 44.21
+SSIM-Y: 0.9960
+==>res_sr:
+PSNR: 34.35
+SSIM: 0.9267
+PSNR-Y: 37.25
+SSIM-Y: 0.9538
+```
+
 The JPEG-robust version of AIDN (i.e., [AIDN+](https://drive.google.com/file/d/1l0vsFlbiy3KkOM-dExOHmTQTWpJbo1wO/view?usp=drive_link)) and the weights of [AIDN](https://drive.google.com/file/d/1vicEmixQGrIH815MXN2WPKjKrk6qjUVC/view?usp=sharing) pre-trained with fixed $\times$ 4 scale are also available.
 
 ## **Citation**

@@ -1,0 +1,5 @@
+Set5/GTmod12/baby.png
+Set5/GTmod12/bird.png
+Set5/GTmod12/butterfly.png
+Set5/GTmod12/head.png
+Set5/GTmod12/woman.png

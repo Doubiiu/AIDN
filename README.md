@@ -34,7 +34,10 @@ AIDN. <i>H</i> and <i>W</i> denote the height and width of images; s<sub>1</sub>
 
 ## **Environment**
 ```
-conda env create -f AIDN.yml
+conda create -n AIDN python=3.6.2
+conda activate AIDN
+conda install pytorch==1.1.0 torchvision==0.3.0 cudatoolkit=10.0 -c pytorch
+pip install -r requirements.txt
 ```
 
 ## **Dataset Preparation**

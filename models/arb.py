@@ -6,6 +6,12 @@ import torch.nn.functional as F
 import math
 
 
+def is_pytorch_version_higher_than(target_version="1.3.0"):
+    installed_version = torch.__version__
+    installed_version_tuple = tuple(map(int, (installed_version.split("+")[0]).split(".")))
+    target_version_tuple = tuple(map(int, target_version.split(".")))
+    return installed_version_tuple >= target_version_tuple
+
 class SCAB_downsample(nn.Module):
     def __init__(self, channels=64, num_experts=4, bias=False):
         super(SCAB_downsample, self).__init__()
@@ -289,7 +295,11 @@ def grid_sample(x, offset, scale, outH=None, outW=None):
         grid = grid + torch.cat((offset_0, offset_1),1)
     grid = grid.permute(0, 2, 3, 1)
 
-    # sampling
-    output = F.grid_sample(x, grid, padding_mode='zeros', align_corners=True)
+    ## sampling
+    ## Remember to add "align_corners=True" to F.grid_sample() if you are using pytorch>=1.3.0
+    # if is_pytorch_version_higher_than(target_version="1.3.0"):
+    #     output = F.grid_sample(x, grid, padding_mode='zeros', align_corners=True)
+    # else:
+    output = F.grid_sample(x, grid, padding_mode='zeros')
 
     return output
